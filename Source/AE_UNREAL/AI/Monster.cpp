@@ -21,8 +21,13 @@ void AMonster::BeginPlay()
 
 	Super::BeginPlay();
 
+	// LHE
+	originPos = GetActorLocation();
+
 	GetBlackboardComponent()->SetValueAsEnum(TEXT("AIState"), static_cast<uint8>(AIState::IDLE));
 	GetBlackboardComponent()->SetValueAsString(TEXT("TargetTag"), TEXT("Player"));
 	GetBlackboardComponent()->SetValueAsFloat(TEXT("SearchRange"), 1500.0f);
 	GetBlackboardComponent()->SetValueAsFloat(TEXT("AttackRange"), 200.0f);
+	// LHE
+	GetBlackboardComponent()->SetValueAsVector(TEXT("OriginPos"), originPos);
 }

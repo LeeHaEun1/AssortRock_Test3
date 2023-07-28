@@ -111,7 +111,6 @@ void UBTTask_MOVE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 		if (offset.Size() > SearchRange * 1.5f)
 		{
 			SetStateChange(OwnerComp, AIState::RETURN);
-			return;
 		}
 	}
 

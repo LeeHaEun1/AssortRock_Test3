@@ -32,15 +32,4 @@ void UBTTask_ATTACK::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 	{
 		SetStateChange(OwnerComp, AIState::MOVE);
 	}
-
-	{
-		FVector originPos = GetBlackboardComponent(OwnerComp)->GetValueAsVector(TEXT("OriginPos"));
-		float SearchRange = GetBlackboardComponent(OwnerComp)->GetValueAsFloat(TEXT("SearchRange"));
-		FVector offset = GetGlobalCharacter(OwnerComp)->GetActorLocation() - originPos;
-
-		if (offset.Size() > SearchRange * 1.5f)
-		{
-			SetStateChange(OwnerComp, AIState::RETURN);
-		}
-	}
 }

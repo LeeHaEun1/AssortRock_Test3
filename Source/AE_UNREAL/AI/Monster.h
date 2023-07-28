@@ -23,4 +23,7 @@ class AE_UNREAL_API AMonster : public AAICharacter
 private:
 	UPROPERTY(Category = "Animation", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	FName DataName = "NONE";
+
+public:
+	FVector originPos;
 };

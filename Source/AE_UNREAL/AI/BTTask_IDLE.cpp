@@ -24,9 +24,9 @@ void UBTTask_IDLE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 
 	if (2.0f <= GetStateTime(OwnerComp))
 	{
-		// Áö¿ªº¯¼ö·Î ·£´ýÀ» ÀÌ¿ëÇÏ´Â°Í.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï´Â°ï¿½.
 		FRandomStream Stream;
-		// ¾Ë¾Æ¼­ ½Ã°£°ú °°Àº º¯ÇÏ´Â ¼ö¸¦ ½Ãµå°ªÀ¸·Î »ï´Â´Ù.
+		// ï¿½Ë¾Æ¼ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµå°ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â´ï¿½.
 		Stream.GenerateNewSeed();
 
 		int Value = Stream.RandRange(0, 1);
@@ -42,8 +42,8 @@ void UBTTask_IDLE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 		//}
 
 
-		// ±×·³ ¼øÂûÇÒ±î?
-		// ±×³É 5ÃÊ°£ ´Ù½Ã ´ë±âÇÏÀÚ.
+		// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò±ï¿½?
+		// ï¿½×³ï¿½ 5ï¿½Ê°ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 		// SetStateChange(OwnerComp, AIState::MOVE);
 		// return;
 	}
@@ -57,7 +57,7 @@ void UBTTask_IDLE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 		return;
 	}
 
-	//ÇÙ½ÉÀº ÇÃ·¹ÀÌ¾î¸¦ Ã£¾Æ³»´Â°Í.
+	//ï¿½Ù½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ Ã£ï¿½Æ³ï¿½ï¿½Â°ï¿½.
 	// GetGlobalCharacter(OwnerComp)->GetLevel()->;
 
 

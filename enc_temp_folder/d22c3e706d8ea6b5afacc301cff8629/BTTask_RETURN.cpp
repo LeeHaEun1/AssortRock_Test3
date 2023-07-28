@@ -15,12 +15,12 @@ EBTNodeResult::Type UBTTask_RETURN::ExecuteTask(UBehaviorTreeComponent& OwnerCom
 {
 	GetGlobalCharacter(OwnerComp)->SetAniState(AIState::RETURN);
 
-	/*UCharacterMovementComponent* MoveCom = Cast<UCharacterMovementComponent>(GetGlobalCharacter(OwnerComp)->GetMovementComponent());
+	//UCharacterMovementComponent* MoveCom = Cast<UCharacterMovementComponent>(GetGlobalCharacter(OwnerComp)->GetMovementComponent());
 
-	if (nullptr != MoveCom)
-	{
-		MoveCom->MaxWalkSpeed = 500.0f;
-	}*/
+	//if (nullptr != MoveCom)
+	//{
+	//	MoveCom->MaxWalkSpeed = 500.0f;
+	//}
 
 	return EBTNodeResult::Type::InProgress;
 }
@@ -29,12 +29,5 @@ void UBTTask_RETURN::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 {
 	FVector originPos = GetBlackboardComponent(OwnerComp)->GetValueAsVector(TEXT("OriginPos"));
 	FVector returnDir = originPos - GetGlobalCharacter(OwnerComp)->GetActorLocation();
-	GetGlobalCharacter(OwnerComp)->AddMovementInput(returnDir);
-	GetGlobalCharacter(OwnerComp)->SetActorRotation(returnDir.Rotation());
-
-	if (returnDir.Size() < 10.f)
-	{
-		SetStateChange(OwnerComp, AIState::PATROL);
-		return;
-	}
+	GetGlobalCharacter(OwnerComp)->AddActorLocalOffset(returnDir * 500.0f * DelataSeconds);
 }
